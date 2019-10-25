@@ -5,6 +5,8 @@ const _ = require('underscore');
 const convertID = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
+let DomoModel = {};
+
 const DomoSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -32,16 +34,16 @@ const DomoSchema = new mongoose.Schema({
 });
 
 DomoSchema.statics.toAPI = (doc) => ({
-    name: doc.name,
-    age: doc.age,
+  name: doc.name,
+  age: doc.age,
 });
 
 DomoSchema.statics.findByOwner = (ownerId, callback) => {
-    const search = {
-        owner: convertID(ownerId),
-    };
+  const search = {
+    owner: convertID(ownerId),
+  };
 
-    return DomoModel.find(search).select('name age').exec(callback);
+  return DomoModel.find(search).select('name age').exec(callback);
 };
 
 DomoModel = mongoose.model('Domo', DomoSchema);

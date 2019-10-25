@@ -14,7 +14,7 @@ const makerPage = (req, res) => {
 };
 
 const makeDomo = (req, res) => {
-  if(!req.body.name || !req.body.age) {
+  if (!req.body.name || !req.body.age) {
     return res.status(400).json({ error: 'Name and age are required' });
   }
 
