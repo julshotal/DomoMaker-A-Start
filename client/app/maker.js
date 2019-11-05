@@ -8,7 +8,7 @@ const handleDomo = (e) => {
         return false;
     }
 
-    sendAjax('POST', $("#domoForm").attr("action"), $("#domoForm").serialize(), function() {
+    sendAjax('POST', $("#domoForm").attr("action"), $("#domoForm").serialize(), redirect, function() {
         loadDomosFromServer();
     });
 };
