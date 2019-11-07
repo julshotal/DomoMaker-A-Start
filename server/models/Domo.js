@@ -21,7 +21,7 @@ const DomoSchema = new mongoose.Schema({
     required: true,
   },
 
-  goal: {
+  lvl: {
     type: Number,
     min: 0,
     required: true,
