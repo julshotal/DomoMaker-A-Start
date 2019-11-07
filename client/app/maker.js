@@ -28,7 +28,7 @@ const DomoForm = (props) => {
             <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
             <label htmlFor="cowboy">Do you want to be a cowboy?</label>
             <select id="domoBoy" type="select" name="cowboy" size="2">
-                <option value="/assets/img/domofaceC.jpg">I want to be a cowboy, baby (hell yeah)</option>
+                <option value="/assets/img/domofaceC.jpeg">I want to be a cowboy, baby (hell yeah)</option>
                 <option value="/assets/img/domoface.jpeg">No</option>
             </select>
             <input type="hidden" name="_csrf" value={props.csrf} />
