@@ -72,7 +72,9 @@ const loadDomosFromServer = () => {
 const StrongestWindow = function(props) {
 
     //https://stackoverflow.com/questions/32076382/mongodb-how-to-get-max-value-from-collections
-    const strongest = props.domos.find().sort({lvl:-1}).limit(1);
+    const sortedByStrength = props.domos.find().sort( { amount: -1 } );
+
+    console.log(sortedByStrength);
         
     return (
         <div>
