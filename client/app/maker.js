@@ -29,7 +29,7 @@ const DomoForm = (props) => {
             <label htmlFor="cowboy">Do you want to be a cowboy?</label>
             <select id="domoBoy" type="select" name="cowboy" size="2">
                 <option value="/assets/img/domofaceC.jpeg">I want to be a cowboy, baby (hell yeah)</option>
-                <option value="/assets/img/domoface.jpeg">No</option>
+                <option value="/assets/img/domoface.jpeg" selected="selected">No</option>
             </select>
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
@@ -45,12 +45,6 @@ const DomoList = function(props) {
             </div>
         );
     }
-
-    // console.log(props.domo.cowboy);
-    // let domoImg = "/assets/img/domoface.jpeg";
-    // if(props.domo.cowboy ===  'yes') {
-    //     domoImg = "/assets/img/domofaceC.jpeg";
-    // }
 
     const domoNodes = props.domos.map(function(domo) {
         return (
