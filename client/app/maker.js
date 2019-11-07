@@ -101,7 +101,7 @@ const findStrongest = () => {
 
         let strongest = domos[0];
 
-        data.domoNodes.forEach(function(domo) {
+        data.domos.forEach(function(domo) {
             if(strongest.lvl < domo.lvl) {
                 strongest = domo;
             }
@@ -130,7 +130,7 @@ const setup = function(csrf) {
     
     nextPage.addEventListener("click", (e) => {
         e.preventDefault();
-        createStrongWindow(domo=findStrongest());
+        createStrongWindow(findStrongest());
         return false;
     });
 
