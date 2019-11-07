@@ -253,6 +253,15 @@ h3.domoAge {
     font-size: 1.5em;
 }
 
+p.domoGoal {
+    float:right;
+    text-align: left;
+    max-width: 200px;
+    max-height: 300px;
+
+    overflow: scroll;
+}
+
 .domo:first-child {
     margin-top: 10px;
 }
