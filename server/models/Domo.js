@@ -7,10 +7,10 @@ const setName = (name) => _.escape(name).trim();
 
 const isCowboy = (cowboy) => {
   if (cowboy === 'yes') {
-    return '/assets/img/domofaceC.jpeg';
+    return true;
   }
 
-  return '/assets/img/domofaceC.jpeg';
+  return false;
 };
 
 let DomoModel = {};
@@ -29,8 +29,8 @@ const DomoSchema = new mongoose.Schema({
     required: true,
   },
 
-  img: {
-    type: String,
+  cowboy: {
+    type: Boolean,
     required: true,
     set: isCowboy,
   },

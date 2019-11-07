@@ -47,9 +47,15 @@ const DomoList = function(props) {
     }
 
     const domoNodes = props.domos.map(function(domo) {
+
+        let domoImg = "/assets/img/domoface.jpeg";
+        if(domo.cowboy ===  true) {
+            domoImg = "/assets/img/domofaceC.jpeg";
+        }
+
         return (
             <div key={domo._id} className="domo">
-                <img src= {domo.img} alt="domo face" className="domoFace" />
+                <img src= { domoImg } alt="domo face" className="domoFace" />
                 <h3 className="domoName"> Name: {domo.name} </h3>
                 <h3 className="domoAge"> Age: {domo.age} </h3>
             </div>
