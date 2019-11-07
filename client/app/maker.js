@@ -3,7 +3,7 @@ const handleDomo = (e) => {
 
     $("#domoMessage").animate({width:'hide'},350);
 
-    if($("#domoName").val() == '' || $("#domoAge").val() == '') {
+    if($("#domoName").val() == '' || $("#domoAge").val() == '' || $()) {
         handleError("All fields are required");
         return false;
     }
@@ -26,11 +26,8 @@ const DomoForm = (props) => {
             <input id="domoName" type="text" name="name" placeholder="Domo Name"/>
             <label htmlFor="age">Age: </label>
             <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
-            <label htmlFor="cowboy">Do you want to be a cowboy?</label>
-            <select id="domoBoy" type="select" name="cowboy" size="2">
-                <option value="yes">I want to be a cowboy, baby (hell yeah)</option>
-                <option value="no" selected="selected">No</option>
-            </select>
+            <label htmlFor="cowboy">Life Goals:</label>
+            <input id="domoBoy" type="text" name="goal" placeholder="Domo goals" />
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
         </form>
@@ -50,7 +47,7 @@ const DomoList = function(props) {
 
         return (
             <div key={domo._id} className="domo">
-                <img src={domo.img} alt="domo face" className="domoFace" />
+                <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
                 <h3 className="domoName"> Name: {domo.name} </h3>
                 <h3 className="domoAge"> Age: {domo.age} </h3>
                 <h3> sRC: {domo.img}</h3>

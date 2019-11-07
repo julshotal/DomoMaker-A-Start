@@ -21,10 +21,9 @@ const DomoSchema = new mongoose.Schema({
     required: true,
   },
 
-  img: {
+  goal: {
     type: String,
     required: true,
-    default: '/assets/img/domoface.jpeg',
   },
 
   owner: {

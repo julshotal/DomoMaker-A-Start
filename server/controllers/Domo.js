@@ -18,16 +18,10 @@ const makeDomo = (req, res) => {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
-  let imgPath = '/assets/img/domoface.jpeg';
-
-  if(req.body.cowboy === 'yes'){
-    imgPath = '/assets/img/domoface.jpeg';
-  }
-
   const domoData = {
     name: req.body.name,
     age: req.body.age,
-    img: imgPath,
+    goal: req.body.goal,
     owner: req.session.account._id,
   };
 
