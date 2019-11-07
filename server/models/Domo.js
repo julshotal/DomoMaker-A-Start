@@ -22,7 +22,8 @@ const DomoSchema = new mongoose.Schema({
   },
 
   goal: {
-    type: String,
+    type: Number,
+    min: 0,
     required: true,
   },
 

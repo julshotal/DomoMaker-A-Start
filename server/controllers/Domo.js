@@ -14,14 +14,14 @@ const makerPage = (req, res) => {
 };
 
 const makeDomo = (req, res) => {
-  if (!req.body.name || !req.body.age || !req.body.goal) {
+  if (!req.body.name || !req.body.age || !req.body.lvl) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
   const domoData = {
     name: req.body.name,
     age: req.body.age,
-    goal: req.body.goal,
+    lvl: req.body.lvl,
     owner: req.session.account._id,
   };
 
