@@ -71,15 +71,8 @@ const loadDomosFromServer = () => {
 
 const StrongestWindow = function(props) {
 
-    var highestLvl = 1;
-    var strongest = [];
-
-    props.domo.forEach(function(domo) {
-        if (highestLvl < domo.lvl) {
-            highestLvl = domo.lvl
-            strongest = domo;
-        }
-    });
+    //https://stackoverflow.com/questions/32076382/mongodb-how-to-get-max-value-from-collections
+    const strongest = props.domos.find().sort({lvl:-1}).limit(1);
         
     return (
         <div>
