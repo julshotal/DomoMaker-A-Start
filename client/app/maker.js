@@ -27,10 +27,10 @@ const DomoForm = (props) => {
             <label htmlFor="age">Age: </label>
             <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
             <label htmlFor="cowboy">Do you want to be a cowboy?</label>
-            <input id="domoBoy" type="select" name="cowboy" size="2">
+            <select id="domoBoy" type="select" name="cowboy" size="2">
                 <option value="/assets/img/domofaceC.jpeg">I want to be a cowboy, baby (hell yeah)</option>
                 <option value="/assets/img/domoface.jpeg">No</option>
-            </input>
+            </select>
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
         </form>
