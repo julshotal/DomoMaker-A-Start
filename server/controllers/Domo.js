@@ -62,14 +62,8 @@ const getDomos = (request, response) => {
 const strongDomos = (request, response) => {
   const res = response;
 
-  return Domo.DomoModel.find().sort({ amount: -1 }, (err, docs) => {
-    if (err) {
-      console.log(err);
-      return res.status(400).json({ error: 'An error occured' });
-    }
-
-    return res.json({ domo: docs });
-  });
+  const strongest = Domo.DomoModel.find().sort({ amount: -1 });
+  return res.json({ domo: strongest });
 };
 
 
