@@ -71,19 +71,24 @@ const loadDomosFromServer = () => {
 
 const StrongestWindow = function(props) {
 
-    var strongest = props.domo[0];
+    var highestLvl = 1;
+    var strongest = [];
 
     props.domo.forEach(function(domo) {
-        if (strongest.lvl < domo.lvl) {
+        if (highestLvl < domo.lvl) {
+            highestLvl = domo.lvl
             strongest = domo;
         }
     });
         
     return (
-        <div key={strongest._id} className="domo">
-            <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
-            <h3 className="domoName"> Name: {strongest.name} </h3>
-            <h3 className="domoAge"> Age: {strongest.age}  Level: {strongest.lvl}</h3>
+        <div>
+            <h1>The strongest domo is....</h1>
+            <div key={strongest._id} className="domo">
+                <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
+                <h3 className="domoName"> Name: {strongest.name} </h3>
+                <h3 className="domoAge"> Age: {strongest.age}  Level: {strongest.lvl}</h3>
+            </div>
         </div>
     );
 }
