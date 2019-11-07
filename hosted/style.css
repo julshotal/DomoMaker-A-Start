@@ -254,6 +254,7 @@ h3.domoAge {
 }
 
 p.domoGoal {
+    float: left;
     text-align: left;
     max-width: 500px;
     max-height: 300px;
