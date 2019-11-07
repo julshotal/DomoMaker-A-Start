@@ -50,7 +50,7 @@ const DomoList = function(props) {
 
         console.log(domo.cowboy);
         let domoImg = "/assets/img/domoface.jpeg";
-        if(domo.cowboy ===  true) {
+        if(domo.cowboy ===  'yes') {
             domoImg = "/assets/img/domofaceC.jpeg";
         }
 

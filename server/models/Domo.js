@@ -5,14 +5,6 @@ const _ = require('underscore');
 const convertID = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
-const isCowboy = (cowboy) => {
-  if (cowboy === 'yes') {
-    return true;
-  }
-
-  return false;
-};
-
 let DomoModel = {};
 
 const DomoSchema = new mongoose.Schema({
@@ -30,9 +22,8 @@ const DomoSchema = new mongoose.Schema({
   },
 
   cowboy: {
-    type: Boolean,
+    type: String,
     required: true,
-    set: isCowboy,
   },
 
   owner: {
