@@ -46,16 +46,16 @@ const DomoList = function(props) {
         );
     }
 
-    console.log(props.domo.cowboy);
-    let domoImg = "/assets/img/domoface.jpeg";
-    if(props.domo.cowboy ===  'yes') {
-        domoImg = "/assets/img/domofaceC.jpeg";
-    }
+    // console.log(props.domo.cowboy);
+    // let domoImg = "/assets/img/domoface.jpeg";
+    // if(props.domo.cowboy ===  'yes') {
+    //     domoImg = "/assets/img/domofaceC.jpeg";
+    // }
 
     const domoNodes = props.domos.map(function(domo) {
         return (
             <div key={domo._id} className="domo">
-                <img src= { domoImg } alt="domo face" className="domoFace" />
+                <img src="/assets/img/domofaceC.jpeg" alt="domo face" className="domoFace" />
                 <h3 className="domoName"> Name: {domo.name} </h3>
                 <h3 className="domoAge"> Age: {domo.age} </h3>
             </div>
