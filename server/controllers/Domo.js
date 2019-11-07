@@ -14,7 +14,7 @@ const makerPage = (req, res) => {
 };
 
 const makeDomo = (req, res) => {
-  if (!req.body.name || !req.body.age || !req.body.cowboy) {
+  if (!req.body.name || !req.body.age || !req.body.goal) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
