@@ -61,33 +61,6 @@ const DomoList = function(props) {
     );
 };
 
-const StrongestWindow = function(props) {
-    if(props.domo.length === 0) {
-        return (
-            <div className="strongDomo">
-                <h3 className="emptyDomo"> No Domos yet</h3>
-            </div>
-        );
-    }
-
-    const domoNode = props.domos.map(function(domo) {
-
-        return (
-            <div key={domo._id} className="domo">
-                <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
-                <h3 className="domoName"> Name: {domo.name} </h3>
-                <h3 className="domoAge"> Age: {domo.age}  Level: {domo.lvl}</h3>
-            </div>
-        );
-    });
-
-    return (
-        <div className="strongDomo">
-            {domoNode}
-        </div>
-    );
-}
-
 const loadDomosFromServer = () => {
     sendAjax('GET', '/getDomos', null, (data) => {
         ReactDOM.render(
@@ -96,25 +69,31 @@ const loadDomosFromServer = () => {
     });
 };
 
+const StrongestWindow = function(props) {
+
+    var strongest = props.domo[0];
+
+    props.domo.forEach(function(domo) {
+        if (strongest.lvl < domo.lvl) {
+            strongest = domo;
+        }
+    });
+        
+    return (
+        <div key={strongest._id} className="domo">
+            <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
+            <h3 className="domoName"> Name: {strongest.name} </h3>
+            <h3 className="domoAge"> Age: {strongest.age}  Level: {strongest.lvl}</h3>
+        </div>
+    );
+}
+
 const findStrongest = () => {
     sendAjax('GET', '/getDomos', null, (data) => {
-
-        let strongest = domos[0];
-
-        data.domos.forEach(function(domo) {
-            if(strongest.lvl < domo.lvl) {
-                strongest = domo;
-            }
-        });
-
-        return strongest;
+        ReactDOM.render(
+            <StrongestWindow domos={data.domos} />, document.querySelector("#domos")
+        );
     });
-};
-
-const createStrongWindow = (domo) => {
-    ReactDOM.render(
-        <DomoList domos={domo} />, document.querySelector("#domos")
-    );
 };
 
 const setup = function(csrf) {
@@ -130,7 +109,7 @@ const setup = function(csrf) {
     
     nextPage.addEventListener("click", (e) => {
         e.preventDefault();
-        createStrongWindow(findStrongest());
+        findStrongest();
         return false;
     });
 
