@@ -7,11 +7,11 @@ const setName = (name) => _.escape(name).trim();
 
 const isCowboy = (cowboy) => {
   if (cowboy === 'yes') {
-    return "/assets/img/domofaceC.jpeg";
-  } 
-  
-  return "/assets/img/domofaceC.jpeg";
-}
+    return '/assets/img/domofaceC.jpeg';
+  }
+
+  return '/assets/img/domofaceC.jpeg';
+};
 
 let DomoModel = {};
 
