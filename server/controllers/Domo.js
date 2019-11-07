@@ -17,12 +17,11 @@ const makeDomo = (req, res) => {
   if (!req.body.name || !req.body.age || !req.body.cowboy) {
     return res.status(400).json({ error: 'All fields are required' });
   }
-  console.log(req.body.cowboy.val());
-
+  
   const domoData = {
     name: req.body.name,
     age: req.body.age,
-    cowboy: req.body.cowboy.val(),
+    cowboy: req.body.cowboy,
     owner: req.session.account._id,
   };
 

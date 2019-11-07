@@ -24,6 +24,7 @@ const DomoSchema = new mongoose.Schema({
   cowboy: {
     type: String,
     required: true,
+    default: "/assets/img/domoface.jpeg",
   },
 
   owner: {
