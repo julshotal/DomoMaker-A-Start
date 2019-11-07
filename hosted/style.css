@@ -182,7 +182,7 @@ nav:nth-child(1) {
     z-index: 225;
     margin-top: -20px;
     margin-left: 135px;
-    height: 450px;
+    height: 550px;
     width: 300px;
     -ms-transform: rotate(330deg);
     -webkit-transform: rotate(330deg); 
@@ -256,8 +256,6 @@ h3.domoAge {
 p.domoGoal {
     float: left;
     text-align: left;
-    max-width: 500px;
-    max-height: 300px;
 
     overflow: scroll;
 }
