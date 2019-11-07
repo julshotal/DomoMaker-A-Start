@@ -48,6 +48,7 @@ const DomoList = function(props) {
 
     const domoNodes = props.domos.map(function(domo) {
 
+        console.log(domo.cowboy);
         let domoImg = "/assets/img/domoface.jpeg";
         if(domo.cowboy ===  true) {
             domoImg = "/assets/img/domofaceC.jpeg";
