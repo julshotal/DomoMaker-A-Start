@@ -113,7 +113,7 @@ const findStrongest = () => {
 
 const createStrongWindow = (domo) => {
     ReactDOM.render(
-        <DomoList domos={domo} />, document.querySelector("#strongestDomo")
+        <DomoList domos={domo} />, document.querySelector("#domos")
     );
 };
 
