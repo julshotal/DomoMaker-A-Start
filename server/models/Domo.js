@@ -5,6 +5,14 @@ const _ = require('underscore');
 const convertID = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 
+const isCowboy = (cowboy) => {
+  if (cowboy === 'yes') {
+    return "/assets/img/domofaceC.jpeg";
+  } 
+  
+  return "/assets/img/domofaceC.jpeg";
+}
+
 let DomoModel = {};
 
 const DomoSchema = new mongoose.Schema({
@@ -19,6 +27,12 @@ const DomoSchema = new mongoose.Schema({
     type: Number,
     min: 0,
     required: true,
+  },
+
+  img: {
+    type: String,
+    required: true,
+    set: isCowboy,
   },
 
   owner: {
