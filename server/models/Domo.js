@@ -4,7 +4,6 @@ const _ = require('underscore');
 
 const convertID = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
-const setGoal = (goal) => _.escape(goal).trim();
 
 let DomoModel = {};
 
@@ -25,8 +24,6 @@ const DomoSchema = new mongoose.Schema({
   goal: {
     type: String,
     required: true,
-    trim: true,
-    set: setGoal,
   },
 
   owner: {
