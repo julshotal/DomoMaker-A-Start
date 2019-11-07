@@ -6,10 +6,10 @@ const convertID = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
 const amCowboy = (img) => {
   if(img === 'yes') {
-    return '../../assets/img/domofaceC.jpeg';
+    return '/assets/img/domofaceC.jpeg';
   }
 
-  return '../../assets/img/domoface.jpeg'
+  return '/assets/img/domoface.jpeg';
 }
 
 let DomoModel = {};

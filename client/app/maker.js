@@ -53,6 +53,7 @@ const DomoList = function(props) {
                 <img src={domo.img} alt="domo face" className="domoFace" />
                 <h3 className="domoName"> Name: {domo.name} </h3>
                 <h3 className="domoAge"> Age: {domo.age} </h3>
+                <h3> sRC: {domo.img}</h3>
             </div>
         );
     });
