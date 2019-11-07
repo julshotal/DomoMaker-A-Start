@@ -4,6 +4,13 @@ const _ = require('underscore');
 
 const convertID = mongoose.Types.ObjectId;
 const setName = (name) => _.escape(name).trim();
+const amCowboy = (img) => {
+  if(img === 'yes') {
+    return '../../assets/img/domofaceC.jpeg';
+  }
+
+  return '../../assets/img/domoface.jpeg'
+}
 
 let DomoModel = {};
 
@@ -21,10 +28,10 @@ const DomoSchema = new mongoose.Schema({
     required: true,
   },
 
-  cowboy: {
+  img: {
     type: String,
     required: true,
-    default: "/assets/img/domoface.jpeg",
+    set: amCowboy,
   },
 
   owner: {

@@ -28,8 +28,8 @@ const DomoForm = (props) => {
             <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
             <label htmlFor="cowboy">Do you want to be a cowboy?</label>
             <select id="domoBoy" type="select" name="cowboy" size="2">
-                <option value="/assets/img/domofaceC.jpeg">I want to be a cowboy, baby (hell yeah)</option>
-                <option value="/assets/img/domoface.jpeg" selected="selected">No</option>
+                <option value="yes">I want to be a cowboy, baby (hell yeah)</option>
+                <option value="no" selected="selected">No</option>
             </select>
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="makeDomoSubmit" type="submit" value="Make Domo" />
@@ -48,11 +48,9 @@ const DomoList = function(props) {
 
     const domoNodes = props.domos.map(function(domo) {
 
-        console.log(domo.name);
-        console.log(domo.cowboy);
         return (
             <div key={domo._id} className="domo">
-                <img src={domo.cowboy} alt="domo face" className="domoFace" />
+                <img src={domo.img} alt="domo face" className="domoFace" />
                 <h3 className="domoName"> Name: {domo.name} </h3>
                 <h3 className="domoAge"> Age: {domo.age} </h3>
             </div>
