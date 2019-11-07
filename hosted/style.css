@@ -256,8 +256,6 @@ h3.domoAge {
 p.domoGoal {
     float: left;
     text-align: left;
-
-    overflow: scroll;
 }
 
 .domo:first-child {
