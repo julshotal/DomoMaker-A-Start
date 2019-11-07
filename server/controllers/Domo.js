@@ -63,7 +63,7 @@ const strongDomos = (request, response) => {
   const res = response;
 
   const strongest = Domo.DomoModel.find().sort({ amount: -1 });
-  return res.json(stronges);
+  console.log(strongest);
 };
 
 
