@@ -70,28 +70,22 @@ const loadDomosFromServer = () => {
 };
 
 const StrongestWindow = function(props) {
-
-    //https://stackoverflow.com/questions/32076382/mongodb-how-to-get-max-value-from-collections
-    const sortedByStrength = props.domos.find().sort( { amount: -1 } );
-
-    console.log(sortedByStrength);
-        
     return (
         <div>
             <h1>The strongest domo is....</h1>
-            <div key={strongest._id} className="domo">
+            <div key={props.domo._id} className="domo">
                 <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
-                <h3 className="domoName"> Name: {strongest.name} </h3>
-                <h3 className="domoAge"> Age: {strongest.age}  Level: {strongest.lvl}</h3>
+                <h3 className="domoName"> Name: {props.domo.name} </h3>
+                <h3 className="domoAge"> Age: {props.domo.age}  Level: {props.domo.lvl}</h3>
             </div>
         </div>
     );
 }
 
 const findStrongest = () => {
-    sendAjax('GET', '/getDomos', null, (data) => {
+    sendAjax('GET', '/getStrongest', null, (data) => {
         ReactDOM.render(
-            <StrongestWindow domos={data.domos} />, document.querySelector("#domos")
+            <StrongestWindow domo={data.domo} />, document.querySelector("#domos")
         );
     });
 };
