@@ -70,6 +70,8 @@ const loadDomosFromServer = () => {
 };
 
 const StrongestWindow = function(props) {
+
+    console.log(props.domo);
     return (
         <div>
             <h1>The strongest domo is....</h1>
