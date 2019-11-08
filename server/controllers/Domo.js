@@ -60,10 +60,9 @@ const getDomos = (request, response) => {
 };
 
 const getStrong = (request, response) => {
-  const req = request;
   const res = response;
 
-  return Domo.DomoModel.findStrongest(req.session.account._id, (err, docs) => {
+  return Domo.DomoModel.findStrongest((err, docs) => {
     if (err) {
       console.log(err);
       return res.status(400).json({ error: 'An error occured' });
