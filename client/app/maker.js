@@ -110,15 +110,13 @@ const setup = function(csrf) {
         return false;
     });
 
-    if(document.querySelector("#back") !== null) {
-        const backBtn = document.querySelector("#back");
+    const backBtn = document.querySelector("#back");
 
-        backBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            loadDomosFromServer();
-            return false;
-        });
-    }
+    backBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadDomosFromServer();
+        return false;
+    });
 
     loadDomosFromServer();
 };
