@@ -80,6 +80,7 @@ const StrongestWindow = function(props) {
                 <h3 className="domoName"> Name: {props.domo[0].name} </h3>
                 <h3 className="domoAge"> Age: {props.domo[0].age}  Level: {props.domo[0].lvl}</h3>
             </div>
+            <button id="back">Back</button>
         </div>
     );
 }
@@ -102,10 +103,17 @@ const setup = function(csrf) {
     );
 
     const nextPage = document.querySelector("#strongPG");
+    const backBtn = document.querySelector("#back");
     
     nextPage.addEventListener("click", (e) => {
         e.preventDefault();
         findStrongest();
+        return false;
+    });
+
+    backBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadDomosFromServer();
         return false;
     });
 

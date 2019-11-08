@@ -260,3 +260,12 @@ h3.domoAge {
 .domo:last-child {
     margin-bottom:10px;
 }
+
+button {
+    font-size: 30px;
+    background: #55acee;
+    color: white;
+
+    padding: 20px 10px 20px 20px;
+    margin-left: 50%;
+}
