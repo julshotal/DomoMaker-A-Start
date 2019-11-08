@@ -53,9 +53,11 @@ DomoSchema.statics.findByOwner = (ownerId, callback) => {
   return DomoModel.find(search).select('name age lvl').exec(callback);
 };
 
-DomoSchema.statics.findStrongest = (callback) => {
-  return DomoModel.find().sort({ occupation: -1 }).select('name age lvl').limit(1).exec(callback);
-};
+DomoSchema.statics.findStrongest = (callback) => DomoModel.find()
+    .sort({ occupation: -1 })
+    .select('name age lvl')
+    .limit(1)
+    .exec(callback);
 
 DomoModel = mongoose.model('Domo', DomoSchema);
 

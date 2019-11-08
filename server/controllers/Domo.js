@@ -69,7 +69,7 @@ const getStrong = (request, response) => {
 
     return res.json({ domo: docs });
   });
-}
+};
 
 module.exports.make = makeDomo;
 module.exports.makerPage = makerPage;
