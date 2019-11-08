@@ -55,7 +55,6 @@ DomoSchema.statics.findByOwner = (ownerId, callback) => {
 
 DomoSchema.statics.findStrongest = (callback) => DomoModel.find()
     .sort({ lvl: -1 })
-    .select('name age lvl')
     .limit(1)
     .exec(callback);
 
