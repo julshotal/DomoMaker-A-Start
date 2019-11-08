@@ -262,10 +262,11 @@ h3.domoAge {
 }
 
 button {
-    font-size: 30px;
+    font-size: 15px;
+    border-radius: 25px;
     background: #55acee;
     color: white;
 
     padding: 20px 10px 20px 20px;
-    margin-left: 50%;
+    margin-left: 30%;
 }
