@@ -4,7 +4,7 @@ const mid = require('./middleware');
 const router = (app) => {
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.get('/getDomos', mid.requiresLogin, controllers.Domo.getDomos);
-  app.get('/getStrongest', mid.requiresLogin, controllers.Domo.strongDomos);
+  app.get('/getStrong', mid.requiresLogin, controllers.Domo.getStrong);
   app.post('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.login);
   app.get('/getToken', mid.requiresSecure, controllers.Account.getToken);
   app.post('/signup', mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);

@@ -83,7 +83,7 @@ const StrongestWindow = function(props) {
 }
 
 const findStrongest = () => {
-    sendAjax('GET', '/getStrongest', null, (data) => {
+    sendAjax('GET', '/getStrong', null, (data) => {
         ReactDOM.render(
             <StrongestWindow domo={data.domo} />, document.querySelector("#domos")
         );

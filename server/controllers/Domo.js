@@ -58,16 +58,20 @@ const getDomos = (request, response) => {
   });
 };
 
-// https://stackoverflow.com/questions/32076382/mongodb-how-to-get-max-value-from-collections
-const strongDomos = (request, response) => {
+const getStrong = (request, response) => {
   const res = response;
 
-  const strongest = Domo.DomoModel.find().sort({ amount: -1 });
-  console.log(strongest);
-};
+  return Domo.DomoModel.findStrongest((err, docs) => {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'An error occured' });
+    }
 
+    return res.json({ domo: docs });
+  });
+}
 
 module.exports.make = makeDomo;
 module.exports.makerPage = makerPage;
 module.exports.getDomos = getDomos;
-module.exports.strongDomos = strongDomos;
+module.exports.getStrong = getStrong;
