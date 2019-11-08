@@ -75,10 +75,10 @@ const StrongestWindow = function(props) {
     return (
         <div>
             <h1>The strongest domo is....</h1>
-            <div key={props.domo._id} className="domo">
+            <div key={props.domo[0]._id} className="domo">
                 <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
-                <h3 className="domoName"> Name: {props.domo.name} </h3>
-                <h3 className="domoAge"> Age: {props.domo.age}  Level: {props.domo.lvl}</h3>
+                <h3 className="domoName"> Name: {props.domo[0].name} </h3>
+                <h3 className="domoAge"> Age: {props.domo[0].age}  Level: {props.domo[0].lvl}</h3>
             </div>
         </div>
     );
